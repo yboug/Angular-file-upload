@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('gemeoLoadOffre')
+    .module('load',['angularFileUpload'])
     .directive('loadbar', loadbar);
 
   /** @ngInject */
@@ -11,7 +11,7 @@
       restrict: 'E',
       templateUrl: 'app/components/upload/upload.html',
       scope: {
-        creationDate: '='
+        uploader: '='
       },
       controller: AppController,
       controllerAs: 'vm',
@@ -21,11 +21,14 @@
     return directive;
 
     /** @ngInject*/
-    function AppController(moment) {
-      var vm = this;
+    function AppController($scope,FileUploader) {
 
+      $scope.uploader = new FileUploader({
+        url: 'upload.php'
+      });
       // "vm.creationDate" is available by directive option "bindToController: true"
-      vm.relativeDate = moment(vm.creationDate).fromNow();
+      //vm.relativeDate = moment(vm.creationDate).fromNow();
+      //vm.loadbar = new FileUploader();
     }
   }
 
