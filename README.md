@@ -9,3 +9,5 @@ steps to run the project
         npm install
         gulp serve
         
+DEMO:
+    https://jsfiddle.net/yboug/hwpogfvr/
