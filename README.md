@@ -5,8 +5,8 @@ Client Angular-file-upload:
 
 steps to run the project
 
-        Bower install
         npm install
+        Bower install
         gulp serve
         
 DEMO:
